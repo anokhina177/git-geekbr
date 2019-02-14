@@ -16,6 +16,7 @@ h2 {
     font-size: 30px;
     font-weight: 400;
     line-height: 36px;
+    text-align: center;
     margin-bottom: 30px;
 }
 
@@ -33,8 +34,6 @@ header {
     justify-content: space-between;
 }
 
-main {}
-
 section {
     padding: 50px;
 }
@@ -44,11 +43,11 @@ section h2 {
     width: 100%;
 }
 
-section:nth-child(even) {
+section:nth-child(odd) {
     background: #F2F2F2
 }
 
-section:nth-child(odd) {
+section:nth-child(even) {
     background: #FCFCFC
 }
 
@@ -66,17 +65,74 @@ section.about h2 {
     text-align: left;
 }
 
-section.advantages ul {
-    columns: 2;
-}
 
-li.advantages {
+
+
+.pluses {
+    width: 50%;
     margin-bottom: 35px;
-    margin-right:30px;
-    width: 526px;
 }
 
-section.advantages {
+.pluses-name::-webkit-details-marker {
+    display: none;
+
+}
+
+.pluses-name {
+    font-family: Arial;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    outline: none;
+}
+
+.pluses-name:before {
+    content: "+";
+    background-color: #445161;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-right: 9px;
+
+}
+
+
+.pluses-text {
+    font-family: Arial;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-left: 41px;
+    margin-top: 0px;
+    margin-right: 23px;
+}
+
+details[open] summary:before {
+    content: "-";
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+details[open]summary:before {
+    display: none;
+}
+
+
+
+.section-pluses {}
+
+.div-pluses {
     display: flex;
     flex-wrap: wrap;
 }
@@ -106,18 +162,19 @@ h1 {
 }
 
 i {
-    font-size:  2em;
+    margin: 8px;
 }
 
 .ul-header {
     list-style-position: inside;
-
+    list-style: none;
     color: #ffffff;
     font-size: 20px;
     font-weight: 400;
     line-height: 36px;
     text-align: left;
     text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+
 }
 
 
@@ -242,8 +299,26 @@ section.buy-it-now div.buy-offer ol {
     text-transform: uppercase;
     margin: 20px;
     border-radius: 5px;
-
+    box-shadow: 0 0  10px #000000;
 }
+
+.button-buy:hover {
+    background: linear-gradient(to top,#F2F2F2,#ffffff);
+}
+
+.button-buy:active{
+    box-shadow: 0 0  0px rgba(0,0,0,5);
+    background:#F2F2F2;
+    outline: none;
+    
+  
+  }
+    
+    .button-buy:focus {
+      outline: none;
+  }
+  
+  
 
 h3 {
     margin-top: 50px;
@@ -322,4 +397,3 @@ footer form button {
     text-align: center;
     width: 100%;
 }
-
