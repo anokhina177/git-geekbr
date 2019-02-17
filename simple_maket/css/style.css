@@ -69,8 +69,9 @@ section.about h2 {
 
 
 .pluses {
-    width: 50%;
+    width: 45%;
     margin-bottom: 35px;
+    margin-left: 50px;
 }
 
 .pluses-name::-webkit-details-marker {
@@ -84,9 +85,7 @@ section.about h2 {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
+    position: relative;
     outline: none;
 }
 
@@ -97,13 +96,14 @@ section.about h2 {
     width: 32px;
     height: 32px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 40px;
-    margin-right: 9px;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    left: -41px;
 
+    font-size: 2em;
 }
-
 
 .pluses-text {
     font-family: Arial;
@@ -112,10 +112,11 @@ section.about h2 {
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    margin-left: 41px;
-    margin-top: 0px;
-    margin-right: 23px;
+
+
+
 }
+
 
 details[open] summary:before {
     content: "-";
@@ -130,12 +131,14 @@ details[open]summary:before {
 
 
 
-.section-pluses {}
-
-.div-pluses {
+.section-pluses {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+
 }
+
+
 
 section.screenshots {
     display: flex;
@@ -174,9 +177,17 @@ i {
     line-height: 36px;
     text-align: left;
     text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
-
 }
 
+div.contact-details ul {
+    list-style-position: inside;
+    list-style: none;
+    color: #ffffff;
+}
+
+div.contact-details i {
+    font-size: 1.5em;
+}
 
 .main-text {
     color: #333333;
@@ -185,7 +196,6 @@ i {
     line-height: 24px;
     text-align: left;
 }
-
 
 p.review-main {
     color: #333333;
@@ -234,12 +244,34 @@ section div.text-review {
     background: #E9E9E9;
     padding: 16px 20px 16px 16px;
     margin-right: 16px;
+    border-radius: 5px;
+    position: relative;
+}
+
+section div.text-review:before {
+    content: "";
+    position: absolute;
+    border: 15px solid transparent;
+    border-right: 15px solid #E9E9E9;
+    top: 20px;
+    left: -30px;
 }
 
 section.reviews img {
     width: 75px;
     height: 75px;
     border-radius: 50%;
+    margin-right: 16px;
+}
+
+.screenshot img {
+    width: 200px;
+    height: 150px;
+}
+
+section.about video {
+    width: 430px;
+    height: 245px;
 }
 
 h5 {
@@ -250,7 +282,6 @@ h5 {
     text-align: left;
     padding: 16px 0px;
     text-align: center;
-
 }
 
 section.buy-it-now {
@@ -270,7 +301,7 @@ section div.buy-offer {
     display: inline-block;
 }
 
-div.price {
+span.price {
     color: #445162;
     background: #ffffff;
     font-size: 40px;
@@ -280,6 +311,7 @@ div.price {
     padding: 18px 0px;
     margin-left: 2px;
     margin-right: 2px;
+    display: block;
 }
 
 section.buy-it-now div.buy-offer ol {
@@ -297,28 +329,29 @@ section.buy-it-now div.buy-offer ol {
     width: 260px;
     height: 40px;
     text-transform: uppercase;
-    margin: 20px;
+    margin: 5px 20px 20px 20px;
     border-radius: 5px;
-    box-shadow: 0 0  10px #000000;
+    box-shadow: 0 0 10px #000000;
+
 }
 
 .button-buy:hover {
-    background: linear-gradient(to top,#F2F2F2,#ffffff);
+    background: linear-gradient(to top, #F2F2F2, #ffffff);
 }
 
-.button-buy:active{
-    box-shadow: 0 0  0px rgba(0,0,0,5);
-    background:#F2F2F2;
+.button-buy:active {
+    box-shadow: 0 0 0px rgba(0, 0, 0, 5);
+    background: #F2F2F2;
     outline: none;
-    
-  
-  }
-    
-    .button-buy:focus {
-      outline: none;
-  }
-  
-  
+
+
+}
+
+.button-buy:focus {
+    outline: none;
+}
+
+
 
 h3 {
     margin-top: 50px;
@@ -344,11 +377,7 @@ footer div {
 form {
     width: 500px;
     text-align: center;
-}
-
-div.contact-details {
-    width: 240px;
-    margin-left: 45px;
+    margin-right: 45px;
 }
 
 input,
@@ -359,6 +388,7 @@ textarea {
     display: inline-block;
     margin: 10px;
     border: 0px;
+    outline: none;
 
     font-family: Arial;
     color: #445162;
@@ -387,6 +417,18 @@ footer form button {
     border-radius: 5px;
 }
 
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin-left: 45px;
+}
+
+footer div {
+    display: flex;
+    align-items: flex-start;
+}
+
 .copyright {
     background: #F2F2F2;
     color: #445162;
@@ -396,4 +438,34 @@ footer form button {
     line-height: 24px;
     text-align: center;
     width: 100%;
+}
+
+.horizontal-list {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    margin-top: 32px;
+}
+
+.horizontal-list li a {
+    display: flex;
+    text-decoration: none;
+    background: #ffffff;
+    color: #445161;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.horizontal-list li a:hover {
+    color: #445161;
+    background: #ccc;
+}
+
+.text-icon {
+    font-size: 12px;
+    background: #445162;
 }
